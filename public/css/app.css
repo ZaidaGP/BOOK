@@ -1,0 +1,22 @@
+body{
+ padding: 30px;   
+}
+.col{
+    display: flex;
+    justify-content: center !important;
+}
+.card-header {
+    background-color:cadetblue;
+    font-size: large;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    
+}
+.btn{
+    margin-top: 20px;
+    
+}
+.icon{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 800;
+}
