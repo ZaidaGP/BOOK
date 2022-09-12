@@ -15,6 +15,27 @@ class ProjectTest extends TestCase
      *
      * @return void
      */
+
+      /** @test */
+    public function index_get()
+    {
+        $this->withoutExceptionHandling();
+        $response = $this->getJson('/api/index');
+        $response->assertOk();
+       
+        
+    }
+
+    /** @test */
+    public function paginate_get()
+    {
+        $this->withoutExceptionHandling();
+        $response = $this->getJson('/api/paginate');
+        $response->assertOk();
+       
+        
+    }
+
     /** @test */
     public function store_post()
     {
@@ -30,32 +51,9 @@ class ProjectTest extends TestCase
 
         ]);
         $response->assertOk();
-        $this->assertCount(1, Book::all());
-
-        $post = Book::first();
-
-        $this->assertEquals($post->title,'Test title' );
-        $this->assertEquals($post->description,'Test description' );
-        $this->assertEquals($post->url,'Test url' );
-        $this->assertEquals($post->year_published,'1' );
-        $this->assertEquals($post->editorial,'Test editorial' );
-        $this->assertEquals($post->available,'1' );
-
-        
-    }
-    
-    /** @test */
-    public function index_get()
-    {
-        $this->withoutExceptionHandling();
-        $response = $this->getJson('/api/index');
-        $response->assertOk();
-       
-
-        
-
         
 
         
     }
+   
 }
